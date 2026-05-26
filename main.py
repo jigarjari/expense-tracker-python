@@ -4,6 +4,13 @@ from expense_manager import (
     delete_expense,
     update_expense
 )
+from analytics import (
+    show_total_expense,
+    show_category_expense,
+    show_highest_expense
+)
+from charts import show_category_chart
+from reports import generate_pdf_report
 while True:
 
     print("\n--- Expense Tracker ---")
@@ -12,7 +19,12 @@ while True:
     print("2. View Expenses")
     print("3. Delete Expense")
     print("4. Update Expense")
-    print("5. Exit")
+    print("5. Show Total Expense")
+    print("6. Show Category-wise Expense")
+    print("7. Show Highest Expense")
+    print("8. Show Expense Chart")
+    print("9. Generate PDF Report")
+    print("10. Exit")
 
     choice = input("Enter choice: ")
 
@@ -67,6 +79,23 @@ while True:
 
             print("Invalid input")
     elif choice == "5":
+
+        show_total_expense()
+
+    elif choice == "6":
+
+        show_category_expense()
+
+    elif choice == "7":
+
+        show_highest_expense()
+    elif choice == "8":
+
+        show_category_chart()
+    elif choice == "9":
+
+        generate_pdf_report()
+    elif choice == "10":
 
         print("Exiting...")
         break
